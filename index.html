@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Бизнес Йога — Private Executive Retreat</title>
+  <meta name="description" content="Премиальный бизнес-ретрит для лидеров, руководителей и собственников. 2 дня глубокой работы с мышлением, управлением и коммуникацией." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #060606;
+      --bg-deep: #0a0a0a;
+      --panel: rgba(255,255,255,0.045);
+      --panel-strong: rgba(255,255,255,0.065);
+      --gold: #d8b06d;
+      --gold-deep: #b88941;
+      --gold-soft: rgba(216,176,109,0.12);
+      --text: #f5f0e8;
+      --muted: #b7aea3;
+      --line: rgba(216,176,109,0.16);
+      --shadow: 0 30px 90px rgba(0,0,0,0.48);
+      --radius: 30px;
+      --radius-sm: 20px;
+      --container: 1260px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 0% 0%, rgba(216,176,109,0.14), transparent 24%),
+        radial-gradient(circle at 100% 10%, rgba(216,176,109,0.08), transparent 18%),
+        radial-gradient(circle at 50% 100%, rgba(216,176,109,0.06), transparent 22%),
+        linear-gradient(180deg, #040404 0%, #090909 35%, #101010 100%);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(circle at center, black 38%, transparent 84%);
+      opacity: 0.22;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .serif,
+    .hero-title,
+    .section-title,
+    .speaker-name,
+    .price {
+      font-family: "Cormorant Garamond", serif;
+      letter-spacing: -0.035em;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section-soft {
+      background: linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0));
+      border-top: 1px solid rgba(216,176,109,0.07);
+      border-bottom: 1px solid rgba(216,176,109,0.07);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 17px;
+      border-radius: 999px;
+      border: 1px solid rgba(216,176,109,0.18);
+      background: rgba(216,176,109,0.10);
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      box-shadow: 0 0 0 6px rgba(216,176,109,0.10);
+    }
+
+    .section-title {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.94;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      max-width: 860px;
+      margin: 0 auto 58px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 58px;
+      padding: 0 30px;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: .28s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f2ddb3 0%, #d8b06d 52%, #b88941 100%);
+      color: #161109;
+      box-shadow: 0 16px 38px rgba(184,137,65,0.30);
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+      border-color: var(--line);
+    }
+
+    .header-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(6,6,6,0.74);
+      border-bottom: 1px solid rgba(216,176,109,0.08);
+    }
+
+    .header {
+      min-height: 88px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo strong {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .logo span {
+      color: var(--gold);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: .2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    .nav .nav-btn {
+      min-height: 44px;
+      padding: 0 18px;
+      background: rgba(255,255,255,0.03);
+      color: var(--gold);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+
+    .hero {
+      padding: 54px 0 90px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    .hero-main {
+      padding: 46px;
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+      min-height: 760px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        radial-gradient(circle at 85% 0%, rgba(216,176,109,0.14), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(216,176,109,0.08);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-size: clamp(66px, 9vw, 112px);
+      line-height: 0.86;
+      margin-bottom: 20px;
+      max-width: 860px;
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: 21px;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-flow {
+      display: grid;
+      gap: 10px;
+      margin: 28px 0 30px;
+    }
+
+    .hero-flow div {
+      position: relative;
+      padding-left: 28px;
+      color: #e8decf;
+      font-size: 17px;
+    }
+
+    .hero-flow div::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .hero-quote {
+      margin-top: 10px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 18px 18px 0;
+      background: rgba(255,255,255,0.03);
+      color: #ddd3c7;
+      max-width: 780px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .hero-lower {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin-top: 36px;
+    }
+
+    .hero-chip {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(216,176,109,0.10);
+    }
+
+    .hero-chip strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .hero-chip span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 760px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0.26));
+      pointer-events: none;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(8,8,8,0.74);
+      border: 1px solid rgba(216,176,109,0.22);
+      backdrop-filter: blur(12px);
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .mission {
+      max-width: 920px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 23px;
+      color: #e3d8ca;
+      line-height: 1.65;
+    }
+
+    .mission strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .grid-2,
+    .grid-3,
+    .author-grid,
+    .audience-grid,
+    .change-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .grid-2,
+    .change-grid,
+    .audience-grid {
+      grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+
+    .panel,
+    .card,
+    .author-box,
+    .cta-box,
+    .price-box {
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+
+    .panel {
+      padding: 36px;
+    }
+
+    .panel h3,
+    .change-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 30px;
+      margin-bottom: 18px;
+    }
+
+    .panel p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 14px;
+      color: #e5dbcg;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+      box-shadow: 0 0 0 6px rgba(216,176,109,0.08);
+    }
+
+    .card {
+      padding: 30px;
+      transition: .28s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(216,176,109,0.28);
+      box-shadow: 0 34px 70px rgba(0,0,0,0.50);
+    }
+
+    .card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(216,176,109,0.10);
+      color: var(--gold);
+      font-size: 26px;
+      margin-bottom: 18px;
+    }
+
+    .card h4 {
+      font-size: 22px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .change-box {
+      padding: 36px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .author-box {
+      padding: 36px;
+    }
+
+    .author-grid {
+      grid-template-columns: 400px 1fr;
+      align-items: center;
+    }
+
+    .author-photo {
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(216,176,109,0.20);
+      min-height: 580px;
+    }
+
+    .author-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .speaker-name {
+      font-size: clamp(44px, 5vw, 70px);
+      line-height: 0.92;
+      margin-bottom: 10px;
+    }
+
+    .speaker-role {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .speaker-text {
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 18px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .metric {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(216,176,109,0.10);
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--text);
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote {
+      margin-top: 20px;
+      padding: 22px 24px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(216,176,109,0.10);
+      color: #ddd4c8;
+    }
+
+    .not-for-you {
+      margin-top: 18px;
+      padding: 20px 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid var(--gold);
+      color: #ddd3c6;
+    }
+
+    .price-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .price-box {
+      padding: 40px;
+    }
+
+    .price {
+      font-size: clamp(72px, 9vw, 118px);
+      line-height: 0.88;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: 19px;
+      margin-bottom: 24px;
+    }
+
+    .price-includes {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(216,176,109,0.10);
+      border: 1px solid rgba(216,176,109,0.20);
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 26px;
+    }
+
+    .cta-box {
+      padding: 34px;
+      margin-top: 22px;
+    }
+
+    .final-text {
+      font-size: 24px;
+      color: #e6dccf;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .footer {
+      padding: 50px 0 58px;
+      background: #040404;
+      border-top: 1px solid rgba(216,176,109,0.10);
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .footer a {
+      color: var(--gold);
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .change-grid,
+      .author-grid,
+      .audience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo img,
+      .author-photo img {
+        min-height: 440px;
+      }
+
+      .hero-lower,
+      .metrics {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-main {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .header {
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav {
+        justify-content: center;
+        gap: 14px 18px;
+      }
+
+      .hero {
+        padding: 28px 0 62px;
+      }
+
+      .hero-main,
+      .panel,
+      .card,
+      .author-box,
+      .change-box,
+      .cta-box,
+      .price-box {
+        padding: 24px;
+      }
+
+      .hero-title {
+        font-size: 54px;
+      }
+
+      .section {
+        padding: 82px 0;
+      }
+
+      .mission {
+        font-size: 19px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-wrap">
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <strong>Бизнес Йога</strong>
+          <span>Лаборатория «Жизнь-is тренинг»</span>
+        </div>
+
+        <nav class="nav">
+          <a href="#about">О тренинге</a>
+          <a href="#method">Подход</a>
+          <a href="#systems">Системы</a>
+          <a href="#author">Елена</a>
+          <a href="#format">Формат</a>
+          <a href="#price" class="nav-btn">Забронировать</a>
+        </nav>
+      </header>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+
+        <div class="hero-main reveal">
+          <div>
+            <div class="eyebrow">Private Executive Retreat для лидеров и собственников</div>
+            <h1 class="hero-title">Бизнес-лагерь для лидеров, руководителей и собственников</h1>
+            <p class="hero-lead">
+              2 дня, которые меняют не только бизнес. Они меняют то, как ты живешь, думаешь и взаимодействуешь с людьми.
+            </p>
+
+            <div class="hero-flow">
+              <div>Ты уже проходишь этот тренинг. Каждый день.</div>
+              <div>Через людей, конфликты, решения, рост и ошибки.</div>
+              <div>Но не извлекаешь систему.</div>
+              <div>За 2 дня ты увидишь то, что раньше не видел.</div>
+              <div>Поймешь то, что раньше не складывалось.</div>
+              <div>И начнешь управлять там, где раньше реагировал.</div>
+            </div>
+
+            <div class="hero-quote">
+              Я не учу. Я создаю новые нейронные связи.
+            </div>
+
+            <div class="hero-actions">
+              <a href="https://t.me/ElenaSi_11" target="_blank" class="btn btn-primary">Забронировать место</a>
+              <a href="#systems" class="btn btn-secondary">Посмотреть программу</a>
+            </div>
+          </div>
+
+          <div class="hero-lower">
+            <div class="hero-chip">
+              <strong>2 дня</strong>
+              <span>16 часов глубокой работы</span>
+            </div>
+            <div class="hero-chip">
+              <strong>10–15 человек</strong>
+              <span>камерный формат группы</span>
+            </div>
+            <div class="hero-chip">
+              <strong>39 000 ₽</strong>
+              <span>доступ к интенсиву</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-photo reveal">
+          <img src="elena.jpg" alt="Елена Сильванович">
+          <div class="floating-card">
+            <strong>Елена Сильванович</strong>
+            <span>международный фасилитатор · бизнес-тренер · психолог · agile coach</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft reveal" id="about">
+    <div class="container">
+      <h2 class="section-title">Это не про бизнес. Это про жизнь</h2>
+      <p class="section-sub">
+        Этот тренинг — квинтэссенция основ, на которых строится всё: бизнес, команды, партнерства, семья, дружба и любые отношения.
+      </p>
+      <div class="mission">
+        <strong>Это про коммуникацию как основу жизни.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="container">
+      <h2 class="section-title">Моя миссия</h2>
+      <div class="mission">
+        Это не просто работа. Это мой дар и часть моей миссии — наполнять этот мир любовью, гармонией и красотой через осознанных лидеров.<br><br>
+        Осознанный руководитель → сильная команда → здоровая культура → счастливые люди.<br>
+        И тогда бизнес делает счастливыми и сотрудников, и клиентов, и самого лидера.
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft reveal" id="method">
+    <div class="container">
+      <div class="grid-2">
+        <div class="panel">
+          <h3>Как я работаю</h3>
+          <p>
+            Большинство тренингов дают знания, инструменты и вдохновение. Но затем всё возвращается обратно. Я работаю иначе.
+          </p>
+          <ul class="list">
+            <li>живое, поточное и глубокое взаимодействие</li>
+            <li>опора на андрагогику — как обучаются взрослые</li>
+            <li>опора на нейрофизиологию — как формируются реакции</li>
+            <li>изменение способа мышления и реагирования</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Главное отличие</h3>
+          <p>
+            Я работаю с каждым участником лично. Ты приходишь со своей реальной ситуацией: команда не тянет, конфликт, выгорание, масштабирование, сложные сотрудники — и не уходишь без ответа.
+          </p>
+          <ul class="list">
+            <li>личные разборы внутри группы</li>
+            <li>работа не с симптомом, а с корнем проблемы</li>
+            <li>новая управленческая опора вместо временной мотивации</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="systems">
+    <div class="container">
+      <h2 class="section-title">Что ты получишь</h2>
+      <p class="section-sub">
+        9 ключевых систем управления людьми и собой. Всё это собирается в одну систему управления.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon">🧠</div>
+          <h4>3 мозга</h4>
+          <p>Как реально принимаются решения и как влиять на поведение.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔺</div>
+          <h4>Пирамида Маслоу</h4>
+          <p>Глубинная мотивация людей и уровни потребностей.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👶</div>
+          <h4>Коммуникация по Берну</h4>
+          <p>Ребенок — Родитель — Взрослый как модель зрелой коммуникации.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧍</div>
+          <h4>4 этапа взросления личности</h4>
+          <p>Как вырастить зрелых сотрудников и укрепить ответственность.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">👥</div>
+          <h4>4 этапа развития команды</h4>
+          <p>Почему команда «не едет» и как её провести к зрелости.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">😔</div>
+          <h4>Стадии проживания изменений</h4>
+          <p>Сопротивление, кризисы, трансформация и прохождение изменений.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🔄</div>
+          <h4>Внедрение изменений</h4>
+          <p>Как делать так, чтобы изменения не откатывались назад.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🎯</div>
+          <h4>DISC + Шульц фон Тун</h4>
+          <p>Типы личностей и глубинная коммуникация с разными людьми.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon">🧩</div>
+          <h4>Модель Белбина</h4>
+          <p>Роли в команде, их баланс и точки напряжения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft reveal">
+    <div class="container">
+      <h2 class="section-title">Что изменится</h2>
+
+      <div class="change-grid">
+        <div class="change-box">
+          <h3>Ты перестанешь</h3>
+          <ul class="list">
+            <li>контролировать</li>
+            <li>уговаривать</li>
+            <li>раздражаться</li>
+            <li>тащить всё на себе</li>
+          </ul>
+        </div>
+
+        <div class="change-box">
+          <h3>Ты начнешь</h3>
+          <ul class="list">
+            <li>видеть систему</li>
+            <li>понимать людей</li>
+            <li>управлять осознанно</li>
+            <li>строить сильные команды</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="author">
+    <div class="container">
+      <div class="author-box">
+        <div class="author-grid">
+          <div class="author-photo">
+            <img src="elena.jpg" alt="Елена Сильванович">
+          </div>
+
+          <div>
+            <h2 class="speaker-name">Елена Сильванович</h2>
+            <div class="speaker-role">международный фасилитатор · бизнес-тренер · психолог · agile coach</div>
+
+            <p class="speaker-text">
+              15 лет управления в IKEA, работа с Правительством Москва, 15 000+ часов работы, 1500+ групп, 150+ команд, 40+ культур.
+            </p>
+
+            <p class="speaker-text">
+              Моя сила: видеть систему в хаосе, чувствовать динамику команд, находить корень проблемы, соединять людей, бизнес и смыслы.
+            </p>
+
+            <div class="metrics">
+              <div class="metric">
+                <strong>15 лет</strong>
+                <span>управления в IKEA</span>
+              </div>
+              <div class="metric">
+                <strong>15 000+</strong>
+                <span>часов работы</span>
+              </div>
+              <div class="metric">
+                <strong>1500+</strong>
+                <span>групп</span>
+              </div>
+              <div class="metric">
+                <strong>40+</strong>
+                <span>культур</span>
+              </div>
+            </div>
+
+            <div class="quote">
+              «Я вижу систему в хаосе, чувствую динамику команд, нахожу корень проблемы и помогаю лидерам начать реально управлять».
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft reveal" id="format">
+    <div class="container">
+      <div class="audience-grid">
+        <div class="panel">
+          <h3>Формат</h3>
+          <ul class="list">
+            <li>2 дня (16 часов)</li>
+            <li>группа 10–15 человек</li>
+            <li>личные разборы</li>
+            <li>глубокая работа</li>
+            <li>сопровождение после</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Для кого</h3>
+          <ul class="list">
+            <li>руководители</li>
+            <li>предприниматели</li>
+            <li>HR</li>
+            <li>лидеры команд</li>
+            <li>лидеры своей жизни</li>
+          </ul>
+
+          <div class="not-for-you">
+            <strong style="color: var(--gold);">Не для тебя, если:</strong><br>
+            ты хочешь просто «послушать», не готов меняться или ищешь быстрые советы.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal" id="price">
+    <div class="container">
+      <div class="price-wrap">
+        <div class="price-box">
+          <h2 class="section-title" style="margin-bottom:20px;">Стоимость участия</h2>
+          <div class="price">39 000 ₽</div>
+          <div class="price-note">Инвестиция в новую систему мышления, коммуникации и управления.</div>
+          <div class="price-includes">2 полных дня · глубокая работа · личные разборы</div>
+
+          <div class="cta-box">
+            <p class="final-text">
+              Ты уже проходишь этот тренинг. Каждый день. С одними и теми же уроками. Может, пора наконец их понять?
+            </p>
+
+            <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+              <a href="https://t.me/ElenaSi_11" target="_blank" class="btn btn-primary">Забронировать место</a>
+              <a href="mailto:zhiznistraining@gmail.com" class="btn btn-secondary">Написать на почту</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© Бизнес Йога | Лаборатория «Жизнь-is тренинг» | Елена Сильванович</p>
+      <p style="margin-top:12px;">
+        <a href="mailto:zhiznistraining@gmail.com">zhiznistraining@gmail.com</a>
+        &nbsp;|&nbsp;
+        <a href="https://t.me/ElenaSi_11" target="_blank">@ElenaSi_11</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
